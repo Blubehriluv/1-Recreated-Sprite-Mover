@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
-    Canvas mainMenu;
+    public GameObject thisMenu;
+    public GameObject otherMenu;
     // Start is called before the first frame update
     void Start()
     {
+        thisMenu = GameObject.Find("MainMenu");
+        thisMenu = GameObject.Find("ColorChanger");
+
+
     }
 
     // Update is called once per frame
@@ -16,8 +21,10 @@ public class StartButton : MonoBehaviour
         
     }
 
-    public void changeScreen()
+    public void ChangeScreen()
     {
         Debug.Log("Hi there");
+        otherMenu.SetActive(false);
+        thisMenu.SetActive(true);
     }
 }
